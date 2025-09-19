@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Hospital Management{% endblock %}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f4f7fa;
+            color: #333;
+        }
+        header {
+            background: #2c3e50;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+        button {
+            padding: 10px 20px;
+            background: #27ae60;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #219150;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Hospital Management System</h1>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/dashboard/">Dashboard</a>
+            <a href="/logout/">Logout</a>
+        </nav>
+    </header>
+    <div class="container">
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>

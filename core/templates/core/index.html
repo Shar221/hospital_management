@@ -1,0 +1,48 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Sign Up{% endblock %}
+
+{% block content %}
+    <div style="max-width: 450px; margin: 0 auto; padding: 20px; 
+                background: #f9f9f9; border-radius: 8px; 
+                box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+
+        <h2 style="text-align:center; margin-bottom: 20px; color:#2c3e50;">
+            Create an Account
+        </h2>
+
+        <form method="post">
+            {% csrf_token %}
+            <div style="margin-bottom: 15px;">
+                {{ form.as_p }}
+            </div>
+
+            <div style="margin-bottom: 20px;">
+                <label for="role" style="display:block; margin-bottom:5px; font-weight:bold;">
+                    Role:
+                </label>
+                <select name="role" id="role" 
+                        style="width: 100%; padding: 10px; border: 1px solid #ccc; 
+                               border-radius: 5px; background: white;">
+                    <option value="patient">Patient</option>
+                    <option value="doctor">Doctor</option>
+                </select>
+            </div>
+
+            <button type="submit" 
+                    style="width: 100%; padding: 12px; background: #2c3e50; 
+                           color: white; border: none; border-radius: 5px; 
+                           font-size: 16px; cursor: pointer;">
+                Sign Up
+            </button>
+        </form>
+
+        <p style="text-align:center; margin-top: 15px; font-size:14px;">
+            Already have an account? 
+            <a href="{% url 'login' %}" 
+               style="color:#2c3e50; text-decoration:none; font-weight:bold;">
+                Login here
+            </a>
+        </p>
+    </div>
+{% endblock %}
